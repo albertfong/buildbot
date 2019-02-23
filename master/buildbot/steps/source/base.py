@@ -297,4 +297,7 @@ class Source(LoggingBuildStep, CompositeStepMixin):
             branch = self.branch
             patch = None
 
+        if isinstance(branch, bytes):
+            branch = bytes2unicode(branch)
+
         self.startVC(branch, revision, patch)
