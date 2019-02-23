@@ -184,6 +184,8 @@ class Properties(util.ComparableMixin):
 
     def setProperty(self, name, value, source, runtime=False):
         name = util.bytes2unicode(name)
+        if isinstance(value, bytes):
+            value = util.bytes2unicode(value)
         json.dumps(value)  # Let the exception propagate ...
         source = util.bytes2unicode(source)
 
