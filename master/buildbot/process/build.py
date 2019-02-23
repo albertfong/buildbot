@@ -232,11 +232,11 @@ class Build(properties.PropertiesMixin):
         if self.sources and len(self.sources) == 1:
             # old interface for backwards compatibility
             source = self.sources[0]
-            props.setProperty("branch", bytes2unicode(source.branch), "Build")
-            props.setProperty("revision", bytes2unicode(source.revision), "Build")
-            props.setProperty("repository", bytes2unicode(source.repository), "Build")
-            props.setProperty("codebase", bytes2unicode(source.codebase), "Build")
-            props.setProperty("project", bytes2unicode(source.project), "Build")
+            props.setProperty("branch", source.branch, "Build")
+            props.setProperty("revision", source.revision, "Build")
+            props.setProperty("repository", source.repository, "Build")
+            props.setProperty("codebase", source.codebase, "Build")
+            props.setProperty("project", source.project, "Build")
 
     def setupWorkerBuildirProperty(self, workerforbuilder):
         path_module = workerforbuilder.worker.path_module
